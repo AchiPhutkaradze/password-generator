@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
+:root {
+  --thumb-position: 50%;
+  --before-thumb-color: #a4ffaf;
+  --after-thumb-color: #18171f;
+}
+body {
+  display: flex;
+  background: linear-gradient(180deg, #14131b 0%, #08070b 100%);
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono";
+  flex-direction: column;
+  gap: 16px;
+}
+.generator {
+  display: flex;
+  justify-content: space-between;
+  background: var(--dark-grey, #24232c);
+  width: 343px;
+  padding: 17px 22px 15px 24px;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--almost-white, #e6e5ea);
+  font-feature-settings: "clig" off, "liga" off;
+}
+main {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  color: #817d92;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+.container {
+  background: var(--dark-grey, #24232c);
+  width: 343px;
+  position: relative;
+}
+.slider-div {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 26px 16px 42px;
+  justify-content: space-between;
+}
+#length {
+  color: var(--almost-white, #e6e5ea);
+  font-size: 16px;
+  font-weight: 700;
+}
+#number {
+  color: var(--neon-green, #a4ffaf);
+  font-size: 24px;
+  font-weight: 700;
+}
+#slider {
+  width: 311px;
+  height: 8px;
+  -webkit-appearance: none;
+  background: var(--neon-green, #a4ffaf);
+  background-size: cover;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 23px;
+  background: linear-gradient(
+    to right,
+    var(--before-thumb-color) 0%,
+    var(--before-thumb-color) var(--thumb-position),
+    var(--after-thumb-color) var(--thumb-position),
+    var(--after-thumb-color) 100%
+  );
+}
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  background-color: #e6e5ea;
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+#slider::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  background-color: #4caf50;
+  cursor: pointer;
+}
+.checkbox-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 20px;
+  gap: 17px;
+}
+.box {
+  display: flex;
+  gap: 16px;
+  padding: 0 0 32px 16px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 1px;
+}
+p {
+  color: var(--almost-white, #e6e5ea);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#check {
+  width: 14px;
+  height: 10px;
+}
+.all {
+  display: flex;
+  white-space: pre;
+  text-align: center;
+  gap: 10px;
+}
+.last-div {
+  display: flex;
+  width: 311px;
+  background-color: #18171f;
+  padding: 17px 16px 18px 16px;
+  align-items: center;
+  margin: 0 16px 0;
+}
+#medium {
+  color: var(--almost-white, #e6e5ea);
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 57px;
+}
+#strength {
+  color: var(--grey, #817d92);
+  font-size: 16px;
+  font-weight: 700;
+}
+.level-boxes {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+}
+.lvl {
+  width: 10px;
+  height: 28px;
+  border: 2px solid var(--almost-white, #e6e5ea);
+}
+#generate {
+  background: var(--neon-green, #a4ffaf);
+  width: 311px;
+  padding: 18px 103px 17px 100px;
+  margin: 16px;
+}
+#arrow {
+  width: 11.105px;
+  height: 12px;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border: 2px solid var(--almost-white, #e6e5ea);
+  justify-content: center;
+  align-items: center;
+  /* background-color: #fff; */
+  background-image: url(./images/icon-check.svg);
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  border: 2px solid var(--Almost-White, #e6e5ea);
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-color: #007bff;
+  border-color: #007bff;
+}

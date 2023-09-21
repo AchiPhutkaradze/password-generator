@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>password-generator</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <body>
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <main>
+        <div class="generator">
+          <span id="password">PTx1f5DaFX</span>
+          <img id="copy" src="./images/icon-copy.svg" />
+        </div>
+        <div class="container">
+          <div class="slider-div">
+            <span id="length">Character Length</span>
+            <span id="number">10</span>
+            <input
+              type="range"
+              min="1"
+              max="20"
+              step="1"
+              value="10"
+              id="slider"
+            />
+          </div>
+          <div class="box">
+            <div class="checkbox-div">
+              <div class="upper all">
+                <input type="checkbox" id="myinput-large custom" />
+                <label for="checkbox"></label>
+                <p class="uppercase">Include Uppercase Letters</p>
+              </div>
+              <div class="lower all">
+                <input type="checkbox" id="myinput-large custom" />
+                <label for="checkbox"></label>
+                <p class="lowercase">Include Lowercase Letters</p>
+              </div>
+              <div class="num all">
+                <input type="checkbox" id="myinput-large custom" />
+                <label for="checkbox"></label>
+                <p class="numbers">Include Numbers</p>
+              </div>
+              <div class="sym all">
+                <!-- <div class="checkbox fourth"> -->
+                <input type="checkbox" id="myinput-large custom" />
+                <label for="checkbox"></label>
+
+                <!-- <img id="check" src="./images/icon-check.svg" /> -->
+                <p class="symbols">Include Symbols</p>
+              </div>
+            </div>
+          </div>
+          +++
+        </div>
+        <div class="last-div">
+          <span id="strength">STRENGTH</span>
+          <span id="medium">MEDIUM</span>
+          <div class="level-boxes">
+            <div class="lvl one"></div>
+            <div class="lvl two"></div>
+            <div class="lvl three"></div>
+            <div class="lvl four"></div>
+          </div>
+        </div>
+        <button id="generate">
+          <span>GENERATE</span>
+          <img id="arrow" src="./images/icon-arrow-right.svg" />
+        </button>
+        <label class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          Checkbox Label
+        </label>
+      </main>
+    </body>
+  </body>
+</html>
