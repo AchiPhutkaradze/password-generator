@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     textArea.select();
     document.execCommand("copy");
     document.body.removeChild(textArea);
-    document.getElementById("copied").style.display = "block";
+    ResolutionChange();
   });
 });
 
@@ -91,10 +91,11 @@ function generateRandomPassword(length) {
   if (checkboxes[0].checked) {
     charset += "QWERTYUIOPASDFGHJKLZXCVBNM";
   }
+
   if (checkboxes[1].checked) {
     charset += "qwertyuiopasdfghjklzxcvbnm";
   }
-  if (checkboxes[2]) {
+  if (checkboxes[2].checked) {
     charset += "1234567890";
   }
   if (checkboxes[3].checked) {
@@ -108,4 +109,13 @@ function generateRandomPassword(length) {
   }
 
   return password;
+}
+
+// Define a function to handle resolution changes
+function ResolutionChange() {
+  if (window.innerWidth >= 768) {
+    document.getElementById("copied").style.display = "block";
+  } else {
+    document.getElementById("copied").style.display = "none";
+  }
 }
