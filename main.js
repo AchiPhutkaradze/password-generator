@@ -1,12 +1,14 @@
-const slider = document.getElementById("slider");
+let slider = document.getElementById("slider");
 const number = document.getElementById("number");
-const checkboxOne = document.querySelector(".first");
-const checkboxTwo = document.querySelector(".second");
-const checkboxThree = document.querySelector(".third");
-const checkboxFour = document.querySelector(".fourth");
-
-const arry = document.getElementById("myinput-large custom");
-console.log(arry);
+const checkboxes = document.querySelectorAll(".chk");
+let one = document.querySelector(".one");
+const lvl = document.querySelectorAll(".lvl");
+let generate = document.getElementById("generate");
+const text = document.getElementById("medium");
+let password = document.getElementById("password");
+let copyBtn = document.getElementById("copy-btn");
+let strength = 0;
+let charset = "";
 
 //lvl-boxes
 
@@ -26,31 +28,84 @@ slider.addEventListener("input", function (event) {
   );
 });
 
-checkboxOne.addEventListener("click", function () {
-  if (checkboxOne.style.backgroundColor === "") {
-    checkboxOne.style.backgroundColor = "#A4FFAF";
-  } else {
-    checkboxOne.style.backgroundColor = "";
-  }
+Array.from(checkboxes).forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      strength++;
+    } else {
+      strength--;
+    }
+  });
 });
-checkboxTwo.addEventListener("click", function () {
-  if (checkboxTwo.style.backgroundColor === "") {
-    checkboxTwo.style.backgroundColor = "#A4FFAF";
+
+generate.addEventListener("click", function () {
+  if (strength == 1) {
+    lvl[0].style.backgroundColor = "var(--1---Red, #F64A4A)";
+    text.innerHTML = "TOO WEAK!";
   } else {
-    checkboxTwo.style.backgroundColor = "";
+    lvl[0].style.backgroundColor = "";
+    text.innerHTML = "";
   }
-});
-checkboxThree.addEventListener("click", function () {
-  if (checkboxThree.style.backgroundColor === "") {
-    checkboxThree.style.backgroundColor = "#A4FFAF";
+  if (strength == 2) {
+    lvl[0].style.backgroundColor = "var(--2---Orange, #FB7C58)";
+    lvl[1].style.backgroundColor = "var(--2---Orange, #FB7C58)";
+    text.innerHTML = "WEAK";
   } else {
-    checkboxThree.style.backgroundColor = "";
+    lvl[(0, 1)].style.backgroundColor = "";
   }
-});
-checkboxFour.addEventListener("click", function () {
-  if (checkboxFour.style.backgroundColor === "") {
-    checkboxFour.style.backgroundColor = "#A4FFAF";
+  if (strength == 3) {
+    lvl[0].style.backgroundColor = "var(--3---Yellow, #F8CD65)";
+    lvl[1].style.backgroundColor = "var(--3---Yellow, #F8CD65)";
+    lvl[2].style.backgroundColor = "var(--3---Yellow, #F8CD65)";
+    text.innerHTML = "MEDIUM";
   } else {
-    checkboxFour.style.backgroundColor = "";
+    lvl[(0, 1, 2)].style.backgroundColor = "";
   }
+  if (strength == 4) {
+    lvl[0].style.backgroundColor = "var(--Neon-Green, #A4FFAF)";
+    lvl[1].style.backgroundColor = "var(--Neon-Green, #A4FFAF)";
+    lvl[2].style.backgroundColor = "var(--Neon-Green, #A4FFAF)";
+    lvl[3].style.backgroundColor = "var(--Neon-Green, #A4FFAF)";
+    text.innerHTML = "STRONG";
+  } else {
+    lvl[(0, 1, 2, 3)].style.backgroundColor = "";
+  }
+
+  charset = "";
+  password.innerHTML = generateRandomPassword(parseInt(slider.value));
 });
+document.addEventListener("DOMContentLoaded", function () {
+  copyBtn.addEventListener("click", function () {
+    const textArea = document.createElement("textarea");
+    textArea.value = password.textContent;
+
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    document.getElementById("copied").style.display = "block";
+  });
+});
+
+function generateRandomPassword(length) {
+  if (checkboxes[0].checked) {
+    charset += "QWERTYUIOPASDFGHJKLZXCVBNM";
+  }
+  if (checkboxes[1].checked) {
+    charset += "qwertyuiopasdfghjklzxcvbnm";
+  }
+  if (checkboxes[2]) {
+    charset += "1234567890";
+  }
+  if (checkboxes[3].checked) {
+    charset += "!@#$%^&*()_+=";
+  }
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
+  }
+
+  return password;
+}

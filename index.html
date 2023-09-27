@@ -16,7 +16,10 @@
       <main>
         <div class="generator">
           <span id="password">PTx1f5DaFX</span>
-          <img id="copy" src="./images/icon-copy.svg" />
+          <button id="copy-btn">
+            <span id="copied">copied</span>
+            <img id="copy" src="./images/icon-copy.svg" />
+          </button>
         </div>
         <div class="container">
           <div class="slider-div">
@@ -34,35 +37,27 @@
           <div class="box">
             <div class="checkbox-div">
               <div class="upper all">
-                <input type="checkbox" id="myinput-large custom" />
-                <label for="checkbox"></label>
-                <p class="uppercase">Include Uppercase Letters</p>
+                <input type="checkbox" class="chk" id="cb1" />
+                <label for="cb1" class="label">Include Uppercase Letters</label>
               </div>
               <div class="lower all">
-                <input type="checkbox" id="myinput-large custom" />
-                <label for="checkbox"></label>
-                <p class="lowercase">Include Lowercase Letters</p>
+                <input type="checkbox" class="chk" id="cb2" />
+                <label for="cb2" class="label">Include Lowercase Letters</label>
               </div>
               <div class="num all">
-                <input type="checkbox" id="myinput-large custom" />
-                <label for="checkbox"></label>
-                <p class="numbers">Include Numbers</p>
+                <input type="checkbox" class="chk" id="cb3" />
+                <label for="cb3" class="label">Include Numbers</label>
               </div>
               <div class="sym all">
-                <!-- <div class="checkbox fourth"> -->
-                <input type="checkbox" id="myinput-large custom" />
-                <label for="checkbox"></label>
-
-                <!-- <img id="check" src="./images/icon-check.svg" /> -->
-                <p class="symbols">Include Symbols</p>
+                <input type="checkbox" class="chk" id="cb4" />
+                <label for="cb4" class="label">Include Symbols</label>
               </div>
             </div>
           </div>
-          +++
         </div>
         <div class="last-div">
           <span id="strength">STRENGTH</span>
-          <span id="medium">MEDIUM</span>
+          <span id="medium"></span>
           <div class="level-boxes">
             <div class="lvl one"></div>
             <div class="lvl two"></div>
@@ -70,15 +65,10 @@
             <div class="lvl four"></div>
           </div>
         </div>
-        <button id="generate">
+        <button id="generate" class="btn">
           <span>GENERATE</span>
           <img id="arrow" src="./images/icon-arrow-right.svg" />
         </button>
-        <label class="custom-checkbox">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-          Checkbox Label
-        </label>
       </main>
     </body>
   </body>

@@ -136,12 +136,14 @@ p {
   padding: 17px 16px 18px 16px;
   align-items: center;
   margin: 0 16px 0;
+  justify-content: space-between;
 }
 #medium {
   color: var(--almost-white, #e6e5ea);
   font-size: 18px;
   font-weight: 700;
-  margin-left: 57px;
+  white-space: pre;
+  margin-left: 20px;
 }
 #strength {
   color: var(--grey, #817d92);
@@ -151,7 +153,6 @@ p {
 .level-boxes {
   display: flex;
   gap: 8px;
-  margin-left: 16px;
 }
 .lvl {
   width: 10px;
@@ -173,35 +174,53 @@ button {
   cursor: pointer;
 }
 
-input[type="checkbox"] {
-  display: none;
+.all {
+  display: flex;
+  align-items: center;
 }
-
-input[type="checkbox"] + label {
-  position: relative;
-  padding-left: 30px;
+.all label {
   cursor: pointer;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-input[type="checkbox"] + label::before {
-  content: "";
+.all input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
   position: absolute;
-  left: 0;
-  top: 0;
+}
+.all label::before {
+  content: "";
   width: 20px;
   height: 20px;
-  border: 2px solid #000;
-  border: 2px solid var(--almost-white, #e6e5ea);
-  justify-content: center;
-  align-items: center;
-  /* background-color: #fff; */
-  background-image: url(./images/icon-check.svg);
-  background-repeat: no-repeat;
-  opacity: 0.2;
   border: 2px solid var(--Almost-White, #e6e5ea);
 }
+.all input[type="checkbox"]:checked + label::before {
+  content: url(../password-generator/images/icon-check.svg);
+  background-color: #a4ffaf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-input[type="checkbox"]:checked + label::before {
-  background-color: #007bff;
-  border-color: #007bff;
+.label {
+  color: var(--almost-white, #e6e5ea);
+  font-size: 16px;
+  font-weight: 700;
+}
+#copy {
+  cursor: pointer;
+}
+#copy-btn {
+  background: var(--dark-grey, #24232c);
+  cursor: pointer;
+}
+#copied {
+  color: #e6e5ea;
+  position: relative;
+  top: -29px;
+  font-family: sans-serif;
+  left: 28px;
+  display: none;
 }
