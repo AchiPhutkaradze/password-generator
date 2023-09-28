@@ -9,6 +9,7 @@ let password = document.getElementById("password");
 let copyBtn = document.getElementById("copy-btn");
 let strength = 0;
 let charset = "";
+let error = "You must select at least one checkbox";
 
 //lvl-boxes
 
@@ -78,12 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
   copyBtn.addEventListener("click", function () {
     const textArea = document.createElement("textarea");
     textArea.value = password.textContent;
-
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
     document.body.removeChild(textArea);
     ResolutionChange();
+    document.getElementById("copied").textContent = "copied";
+    setTimeout(function () {
+      document.getElementById("copied").textContent = "";
+    }, 500);
   });
 });
 
@@ -91,7 +95,6 @@ function generateRandomPassword(length) {
   if (checkboxes[0].checked) {
     charset += "QWERTYUIOPASDFGHJKLZXCVBNM";
   }
-
   if (checkboxes[1].checked) {
     charset += "qwertyuiopasdfghjklzxcvbnm";
   }
@@ -111,7 +114,6 @@ function generateRandomPassword(length) {
   return password;
 }
 
-// Define a function to handle resolution changes
 function ResolutionChange() {
   if (window.innerWidth >= 768) {
     document.getElementById("copied").style.display = "block";

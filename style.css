@@ -235,6 +235,7 @@ button {
   .generator {
     width: 540px;
     padding: 19px 28px 19px 32px;
+    font-size: 32px;
   }
   .container {
     width: 540px;
