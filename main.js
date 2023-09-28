@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("copied").textContent = "copied";
     setTimeout(function () {
       document.getElementById("copied").textContent = "";
-    }, 500);
+    }, 1000);
   });
 });
 
@@ -104,14 +104,23 @@ function generateRandomPassword(length) {
   if (checkboxes[3].checked) {
     charset += "!@#$%^&*()_+=";
   }
-  let password = "";
+  if (
+    !checkboxes[0].checked &&
+    !checkboxes[1].checked &&
+    !checkboxes[2].checked &&
+    !checkboxes[3].checked
+  ) {
+    return error;
+  }
+
+  let passwordAchi = "";
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset[randomIndex];
+    passwordAchi += charset[randomIndex];
   }
 
-  return password;
+  return passwordAchi;
 }
 
 function ResolutionChange() {

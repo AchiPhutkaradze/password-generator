@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", sans-serif;
   flex-direction: column;
   gap: 16px;
 }
@@ -166,6 +166,13 @@ p {
   width: 311px;
   padding: 18px 103px 17px 100px;
   margin: 16px;
+  gap: 16px;
+  color: var(--Dark-Grey, #24232c);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
 }
 #arrow {
   width: 11.105px;
@@ -224,7 +231,7 @@ button {
 #copied {
   color: #e6e5ea;
   position: relative;
-  font-family: " JetBrains Mono";
+  /* font-family: inherit; */
   display: none;
   font-size: 18px;
   font-weight: 700;
@@ -277,10 +284,19 @@ button {
   }
   #generate {
     padding: 21px 212px 20px 177px;
-    display: flex;
     gap: 24px;
+    font-size: 18px;
   }
   h1 {
     font-size: 24px;
+  }
+  #generate:hover {
+    background-color: var(--Dark-Grey, #24232c);
+    color: var(--Neon-Green, #a4ffaf);
+    border: 2px solid var(--Neon-Green, #a4ffaf);
+    fill: #4caf50;
+  }
+  #arrow:hover {
+    background-color: #4caf50;
   }
 }
