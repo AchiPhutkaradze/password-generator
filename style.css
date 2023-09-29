@@ -231,7 +231,6 @@ button {
 #copied {
   color: #e6e5ea;
   position: relative;
-  /* font-family: inherit; */
   display: none;
   font-size: 18px;
   font-weight: 700;
@@ -294,9 +293,10 @@ button {
     background-color: var(--Dark-Grey, #24232c);
     color: var(--Neon-Green, #a4ffaf);
     border: 2px solid var(--Neon-Green, #a4ffaf);
-    fill: #4caf50;
+    fill: #4caf50;    
   }
-  #arrow:hover {
-    background-color: #4caf50;
+  #slider::-webkit-slider-thumb:hover {
+    background-color: var(--Very-Dark-Grey, #18171f);
+    border: 2px solid var(--Neon-Green, #a4ffaf);
   }
 }
